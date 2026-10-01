@@ -63,8 +63,38 @@ function openAuth(mode){
   }, 40);
 }
 
-document.querySelector("[data-open-signup]")?.addEventListener("click",()=>openAuth("signup"));
-document.querySelector("[data-open-signin]")?.addEventListener("click",()=>openAuth("signin"));
+// Header account actions are finalized after restoring the current user below.
+// Guest: CREATE ACCOUNT opens signup. Authenticated: @username opens the creator profile.
+// SIGN IN opens login for guests; authenticated SIGN OUT clears the local prototype state.
+function bindHeaderAccountActions(){
+  const accountBtn = document.querySelector("[data-open-signup]");
+  const authBtn = document.querySelector("[data-open-signin]");
+  if(!accountBtn || !authBtn) return;
+
+  const saved = localStorage.getItem("void_user");
+  let user = null;
+  try { user = saved ? JSON.parse(saved) : null; } catch { user = null; }
+
+  accountBtn.onclick = (event) => {
+    event.preventDefault();
+    if(user?.username){
+      location.href = `profile.html?u=${encodeURIComponent(user.username)}`;
+    } else {
+      openAuth("signup");
+    }
+  };
+
+  authBtn.onclick = (event) => {
+    event.preventDefault();
+    if(user?.username){
+      localStorage.removeItem("void_user");
+      location.reload();
+    } else {
+      openAuth("signin");
+    }
+  };
+}
+
 signupTab?.addEventListener("click",()=>setAuthMode("signup"));
 signinTab?.addEventListener("click",()=>setAuthMode("signin"));
 authSwitch?.addEventListener("click",()=>setAuthMode(authMode==="signup"?"signin":"signup"));
@@ -166,20 +196,28 @@ document.querySelector("[data-demo-upload]")?.addEventListener("click",()=>{
 // a secure HttpOnly session cookie issued by the backend.
 (function(){
   const saved = localStorage.getItem("void_user");
-  if(!saved) return;
+  const signup = document.querySelector("[data-open-signup]");
+  const signin = document.querySelector("[data-open-signin]");
+
+  if(!saved){
+    if(signup) signup.textContent = "CREATE ACCOUNT";
+    if(signin) signin.textContent = "SIGN IN";
+    bindHeaderAccountActions();
+    return;
+  }
+
   try{
     const user = JSON.parse(saved);
-    const signup = document.querySelector("[data-open-signup]");
-    const signin = document.querySelector("[data-open-signin]");
+    if(!user?.username) throw new Error("Invalid saved user");
     if(signup) signup.textContent = "@" + user.username;
     if(signin) signin.textContent = "SIGN OUT";
-    signin?.addEventListener("click", ()=>{
-      localStorage.removeItem("void_user");
-      location.reload();
-    });
   }catch{
     localStorage.removeItem("void_user");
+    if(signup) signup.textContent = "CREATE ACCOUNT";
+    if(signin) signin.textContent = "SIGN IN";
   }
+
+  bindHeaderAccountActions();
 })();
 
 // V25 — smooth page entry/exit for the marketplace.

@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>VOID — Independent Creator Marketplace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#home">VOID <span>by xg.com</span></a>
+    <nav>
+      <a href="#discover">Discover</a>
+      <a href="#latest">Actual</a>
+      <a href="#creators">Creators</a>
+      <a href="#kits">Sound Kits</a>
+      <a href="#upload">Upload</a>
+      <a href="#dashboard">Dashboard</a>
+    </nav>
+    <div class="auth-actions"><button class="account-btn" data-open-signup>CREATE ACCOUNT</button><button class="account-link" data-open-signin>SIGN IN</button></div>
+  </header>
+
+  <main>
+    <section id="home" class="hero marketplace-hero">
+      <div class="eyebrow">INDEPENDENT CREATOR MARKETPLACE</div>
+      <h1>CREATE.<br><em>RELEASE.</em><br>OWN IT.</h1>
+      <p>One place for independent producers, artists and sound designers to publish, sell and discover original digital products.</p>
+      <div class="hero-actions">
+        <a class="primary-btn" href="#discover">EXPLORE MARKETPLACE</a>
+        <a class="ghost-btn" href="#upload">START SELLING</a>
+      </div>
+    </section>
+
+    <section id="latest" class="section latest-section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">ACTUAL</div>
+          <h2>Uploaded in the last hour.</h2>
+        </div>
+        <span class="latest-live"><i></i> LIVE FEED</span>
+      </div>
+      <div class="product-grid" id="latestProducts"></div>
+      <p class="latest-note">Shows products published within the last 60 minutes. New demo uploads appear here automatically.</p>
+    </section>
+
+    <section id="discover" class="section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">DISCOVER</div>
+          <h2>Fresh from independent creators.</h2>
+        </div>
+        <div class="filter-row">
+          <button class="filter active">ALL</button>
+          <button class="filter">BEATS</button>
+          <button class="filter">SOUND KITS</button>
+          <button class="filter">LOOPS</button>
+        </div>
+      </div>
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-art">NO<br>TRUST</div>
+          <div class="product-meta"><span>BEAT</span><span>153 BPM</span></div>
+          <h3>No Trust</h3><p>by <b>@xgdxtcom</b></p>
+          <div class="product-bottom"><strong>$30+</strong><button>VIEW</button></div>
+        </article>
+        <article class="product-card">
+          <div class="product-art">DARK<br>MATTER</div>
+          <div class="product-meta"><span>BEAT</span><span>140 BPM</span></div>
+          <h3>Dark Matter</h3><p>by <b>@producer02</b></p>
+          <div class="product-bottom"><strong>$25+</strong><button>VIEW</button></div>
+        </article>
+        <article class="product-card">
+          <div class="product-art">VOID<br>DRUMS</div>
+          <div class="product-meta"><span>SOUND KIT</span><span>184 FILES</span></div>
+          <h3>VOID DRUMS 01</h3><p>by <b>@soundlab</b></p>
+          <div class="product-bottom"><strong>$20</strong><button>VIEW</button></div>
+        </article>
+        <article class="product-card">
+          <div class="product-art">AFTER<br>HOURS</div>
+          <div class="product-meta"><span>LOOPS</span><span>WAV</span></div>
+          <h3>After Hours Loops</h3><p>by <b>@m4rko</b></p>
+          <div class="product-bottom"><strong>$15</strong><button>VIEW</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="creators" class="section">
+      <div class="section-head">
+        <div><div class="eyebrow">CREATORS</div><h2>Independent by design.</h2></div>
+      </div>
+      <div class="creator-grid">
+        <a class="creator" href="profile.html?u=xgdxtcom"><span class="avatar avatar-photo"><img src="assets/xgdxtcom-profile.jpg" alt="@xgdxtcom"></span><div><strong>@xgdxtcom</strong><small>47 beats · 12 kits</small></div><span>→</span></a>
+        <a class="creator" href="profile.html?u=producer02"><span class="avatar">02</span><div><strong>@producer02</strong><small>18 beats · 4 kits</small></div><span>→</span></a>
+        <a class="creator" href="profile.html?u=soundlab"><span class="avatar">SL</span><div><strong>@soundlab</strong><small>8 kits · 21 loops</small></div><span>→</span></a>
+      </div>
+    </section>
+
+    <section id="upload" class="section upload-section">
+      <div class="upload-copy">
+        <div class="eyebrow">FOR CREATORS</div>
+        <h2>Your work.<br>Your page.<br>Your rules.</h2>
+        <p>Create an account, upload your work, choose your pricing and publish it to the VOID marketplace. The platform is built around independent creators rather than a single label or store.</p>
+      </div>
+      <div class="upload-panel">
+        <div class="panel-top"><span>NEW PRODUCT</span><span>STEP 01 / 03</span></div>
+        <div class="upload-type-grid">
+          <button data-upload-type="BEAT">BEAT</button>
+          <button data-upload-type="SOUND KIT">SOUND KIT</button>
+          <button data-upload-type="LOOP PACK">LOOP PACK</button>
+          <button data-upload-type="MIDI / PRESET">MIDI / PRESET</button>
+        </div>
+        <button class="primary-btn full" data-demo-upload>CONTINUE</button>
+        <small>Prototype only — real file storage, accounts and payments come in the backend phase.</small>
+      </div>
+    </section>
+
+    <section id="dashboard" class="section dashboard-section">
+      <div class="section-head">
+        <div><div class="eyebrow">CREATOR DASHBOARD</div><h2>One account. Two sides.</h2></div>
+      </div>
+      <div class="dashboard-grid">
+        <div class="dash-card"><span>PRODUCTS</span><strong>24</strong><small>published</small></div>
+        <div class="dash-card"><span>SALES</span><strong>186</strong><small>all time</small></div>
+        <div class="dash-card"><span>EARNINGS</span><strong>$2,840</strong><small>available balance</small></div>
+        <div class="dash-card"><span>PROFILE</span><strong>@you</strong><small>public creator page</small></div>
+      </div>
+      <div class="workflow">
+        <span>CREATE ACCOUNT</span><b>→</b><span>UPLOAD</span><b>→</b><span>SET PRICE</span><b>→</b><span>PUBLISH</span><b>→</b><span>SELL</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>VOID — independent creator marketplace</span>
+    <span>V25 / MARKETPLACE</span>
+  </footer>
+
+  <div class="modal" id="accountModal" hidden>
+    <div class="modal-bg" data-close-account></div>
+
+    <div class="auth-window" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <button class="modal-close auth-close" data-close-account type="button" aria-label="Close">×</button>
+
+      <div class="auth-brand">
+        <span>VOID</span>
+        <small>by xg.com</small>
+      </div>
+
+      <div class="auth-heading">
+        <div class="eyebrow" id="authEyebrow">JOIN VOID</div>
+        <h2 id="authTitle">Create account.</h2>
+        <p id="authCopy">Create your independent creator account and start building your own page.</p>
+      </div>
+
+      <div class="auth-tabs">
+        <button type="button" id="signupTab" class="auth-tab active">CREATE ACCOUNT</button>
+        <button type="button" id="signinTab" class="auth-tab">SIGN IN</button>
+      </div>
+
+      <form id="authForm" class="auth-form">
+        <div class="auth-field" id="nameField">
+          <label for="authUsername">USERNAME</label>
+          <div class="input-wrap">
+            <span>@</span>
+            <input id="authUsername" name="username" type="text" placeholder="yourname" autocomplete="username">
+          </div>
+          <small>Your public creator name.</small>
+        </div>
+
+        <div class="auth-field">
+          <label for="authEmail">EMAIL</label>
+          <div class="input-wrap">
+            <input id="authEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="auth-field">
+          <div class="field-label-row">
+            <label for="authPassword">PASSWORD</label>
+            <button type="button" class="forgot-link" id="forgotPassword">FORGOT?</button>
+          </div>
+          <div class="input-wrap password-wrap">
+            <input id="authPassword" name="password" type="password" placeholder="••••••••" autocomplete="new-password" required>
+            <button type="button" class="password-toggle" id="passwordToggle">SHOW</button>
+          </div>
+        </div>
+
+        <div class="auth-field" id="confirmField">
+          <label for="authConfirm">CONFIRM PASSWORD</label>
+          <div class="input-wrap">
+            <input id="authConfirm" name="confirm" type="password" placeholder="••••••••" autocomplete="new-password">
+          </div>
+        </div>
+
+        <label class="terms-row" id="termsRow">
+          <input type="checkbox" id="authTerms">
+          <span>I agree to the VOID Terms of Service and Creator Guidelines.</span>
+        </label>
+
+        <button class="primary-btn full auth-submit" id="authSubmit" type="submit">CREATE ACCOUNT</button>
+      </form>
+
+      <div class="auth-footer" id="authFooter">
+        <span>Already have an account?</span>
+        <button type="button" id="authSwitch">SIGN IN</button>
+      </div>
+
+      <div class="auth-note">
+        VOID is open to browse without an account. Your account is only needed for creator tools, purchases and orders.
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

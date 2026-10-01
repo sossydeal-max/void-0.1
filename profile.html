@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>VOID — Creator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="profile-page">
+  <header class="topbar">
+    <a class="logo" href="index.html#home">VOID <span>by xg.com</span></a>
+    <nav>
+      <a href="index.html#discover">Discover</a>
+      <a href="index.html#creators">Creators</a>
+      <a href="index.html#kits">Sound Kits</a>
+      <a href="index.html#upload">Upload</a>
+      <a href="index.html#dashboard">Dashboard</a>
+    </nav>
+    <div class="auth-actions"><a class="account-btn" href="index.html#home">BACK TO VOID</a></div>
+  </header>
+
+  <main id="profileRoot" class="profile-main">
+    <section class="profile-hero">
+      <a class="back-link" href="index.html#creators">← BACK TO CREATORS</a>
+      <div class="profile-identity">
+        <div class="profile-avatar" id="profileAvatar"><img id="profileAvatarImage" alt="@xgdxtcom profile photo"></div>
+        <div>
+          <div class="eyebrow" id="profileType">CREATOR</div>
+          <h1 id="profileName">@xgdxtcom</h1>
+          <p id="profileBio">Independent producer.</p>
+        </div>
+      </div>
+      <div class="profile-stats" id="profileStats"></div>
+    </section>
+
+    <section class="section genius-section">
+      <div class="section-head">
+        <div><div class="eyebrow">GENIUS</div><h2>Artist profile & popular songs.</h2></div>
+      </div>
+      <div id="geniusInfo" class="genius-panel"></div>
+    </section>
+
+    <section class="section profile-products-section">
+      <div class="section-head">
+        <div><div class="eyebrow">CATALOG</div><h2>Published work.</h2></div>
+      </div>
+      <div class="product-grid" id="profileProducts"></div>
+    </section>
+  </main>
+
+  <footer>
+    <span>VOID — independent creator marketplace</span>
+    <span>CREATOR PAGE</span>
+  </footer>
+
+  <script src="profile.js"></script>
+</body>
+</html>
